@@ -2,10 +2,11 @@
 
 struct station {
 	// FILL ME IN
-	int passengers;
+	int passengersWaiting;
+	int count;
+	int passengersToBoard;
 	pthread_mutex_t pc_mutex;
-	pthread_cond_t cond_NOavailSpace, cond_availSpace;
-	//pthread_mutex_init(&pc_mutex, NULL);
+	pthread_cond_t trainAvailable, trainFull;
 };
 
 void station_init(struct station *station);
